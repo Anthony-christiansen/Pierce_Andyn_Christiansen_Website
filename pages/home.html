@@ -581,6 +581,32 @@
         .mosaic-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
         .mosaic-item:hover img { transform: scale(1.05); }
 
+        .mosaic-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: var(--radius-soft);
+        }
+
+        .mosaic-video-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(61, 61, 61, 0.55);
+            color: var(--text-white);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 2;
+        }
+
         .mosaic-caption {
             position: absolute; bottom: 0; left: 0; right: 0;
             padding: 16px 14px 12px;
@@ -749,7 +775,7 @@
                 <li><a href="/pages/home.html" class="active">Home</a></li>
                 <li><a href="/pages/timeline.html">Timeline</a></li>
                 <li><a href="/pages/gallery.html">Photos</a></li>
-                <li><a href="/pages/Favorites.html">Favorites</a></li>
+                <li><a href="/pages/favorites.html">Favorites</a></li>
                 <li><a href="/pages/family.html">Family</a></li>
                 <li><a href="/pages/moments.html">Moments</a></li>
                 <li><a href="/pages/about.html">About</a></li>
@@ -841,7 +867,7 @@
                 <div class="nav-card-title">Photo Gallery</div>
                 <div class="nav-card-desc">All the snapshots and memories</div>
             </a>
-            <a href="/pages/Favorites.html" class="nav-card">
+            <a href="/pages/favorites.html" class="nav-card">
                 <span class="nav-card-icon">⭐</span>
                 <div class="nav-card-title">Things He Loves</div>
                 <div class="nav-card-desc">Monster trucks, Roombas, chicken baskets & more</div>
@@ -900,8 +926,8 @@
                 </div>
                 <div class="glance-item">
                     <span class="glance-emoji">🧸</span>
-                    <span class="glance-label">Best Buddy</span>
-                    <span class="glance-value">Monkey (lemur)</span>
+                    <span class="glance-label">Best Buddies</span>
+                    <span class="glance-value">Monkey & His Blanky</span>
                 </div>
                 <div class="glance-item">
                     <span class="glance-emoji">🤝</span>
@@ -970,6 +996,10 @@
                 <span class="fav-chip-emoji">🍭</span>
                 <div><span class="fav-chip-label">New Love</span><br><span class="fav-chip-value">Zolli Pops</span></div>
             </div>
+            <div class="fav-chip">
+                <span class="fav-chip-emoji">👶</span>
+                <div><span class="fav-chip-label">Safety Blanket</span><br><span class="fav-chip-value">His Old Onesie Jammies (Blanky)</span></div>
+            </div>
         </div>
     </section>
 
@@ -1016,14 +1046,15 @@
 
             <!-- 📸 MOSAIC 1 — Tall featured -->
             <div class="mosaic-item tall">
-                <!-- Replace with: <img src="/images/gallery/2025/FILENAME.jpg" alt="Description" loading="lazy"><div class="mosaic-caption">Caption</div> -->
-                <div class="mosaic-placeholder">📷<span>Photo coming soon</span></div>
+                <img src="/images/years/year-1/newborn-sleeping.jpg" alt="Newborn Pierce sleeping" loading="lazy">
+                <div class="mosaic-caption">Tiny Pierce, brand new to the world</div>
             </div>
 
-            <!-- 📸 MOSAIC 2 -->
+            <!-- 🎥 MOSAIC 2 — Video -->
             <div class="mosaic-item">
-                <!-- Replace with: <img src="/images/gallery/2025/FILENAME.jpg" alt="Description" loading="lazy"><div class="mosaic-caption">Caption</div> -->
-                <div class="mosaic-placeholder">📷<span>Photo coming soon</span></div>
+                <span class="mosaic-video-badge">▶ Video</span>
+                <video src="/videos/sleeping_newborn.MOV" muted playsinline preload="metadata" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0;" onclick="if(this.paused){this.play();this.muted=false;}else{this.pause();this.muted=true;}"></video>
+                <div class="mosaic-caption">Newborn Pierce sleeping while Dad works</div>
             </div>
 
             <!-- 📸 MOSAIC 3 -->
@@ -1067,7 +1098,7 @@
                 <div class="yearbook-cover-placeholder">🍼</div>
                 <div class="yearbook-info">
                     <div class="yearbook-title">Year One</div>
-                    <div class="yearbook-subtitle">Newborn to 1 — the Kickstand era</div>
+                    <div class="yearbook-subtitle">Newborn to 1 — Kickstand crawl & blanky love</div>
                 </div>
             </a>
 
